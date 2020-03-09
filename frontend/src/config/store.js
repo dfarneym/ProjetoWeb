@@ -7,8 +7,13 @@ Vue.use(Vuex)
 //Criando as funções que vão manipular os dados
 export default new Vuex.Store({
     state: {
-        isMenuVisible: true
+        isMenuVisible: true,
+        user: {
+            name: 'Daniel Farney',
+            email: 'f_farney@hotmail.com'
+        }
     },
+    // 'user' como objeto fixo. Posteriormente esse user será substituido por um usuário que realmente fez login na aplicação
     //É reponsável por fazer a alternancia dos estados do Menu
     mutations: {
         toggleMenu(state, isVisible) {

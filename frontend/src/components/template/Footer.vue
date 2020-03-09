@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-        <span> Copyright <strong> Sera que presta?</strong> © 2020</span>
+        <span> Copyright <strong>Será Que Presta?</strong> © 2020</span>
     </footer>
 </template>
 
