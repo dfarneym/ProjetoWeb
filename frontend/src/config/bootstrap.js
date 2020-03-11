@@ -6,4 +6,5 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 
-Vue.use(BootstrapVue) // registra o BootstrapVue
+// registra o BootstrapVue
+Vue.use(BootstrapVue) 

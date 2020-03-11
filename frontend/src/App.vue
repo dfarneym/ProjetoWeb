@@ -1,8 +1,8 @@
 <template> 
 	<div id="app" :class="{'hide-menu': !isMenuVisible}"> 
 		<Header title="Será que Presta?" 
-			:hideToggle="false"
-			:hideUserDropdown="false" />
+		:hideToggle="false"
+		:hideUserDropdown="false" />
 		<Menu />
 		<Content />
 		<Footer />
@@ -15,10 +15,10 @@ import Header from "./components/template/Header"
 import Menu from "./components/template/Menu"
 import Content from "./components/template/Content"
 import Footer from "./components/template/Footer"
-
+// Declaração de Componentes
 export default {
 	name: "App",
-	components: { Header, Menu, Content, Footer}, // Declaração de Componentes
+	components: { Header, Menu, Content, Footer}, 
 	computed: mapState(['isMenuVisible'])
 }
 </script>
@@ -44,11 +44,6 @@ export default {
 			"header header"
 			"menu content"
 			"menu footer";
-
-		
-
-
-
 
 	}
 
