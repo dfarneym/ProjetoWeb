@@ -4,18 +4,18 @@
             <i class="fa fa-lg" :class="icon"></i>
         </a>
         <h1 class="title">
-            {{title}}
+            <router-link to="/">{{ title }}</router-link>
         </h1>
-        <UserDropDown v-if="!hideUserDropdown" />
+        <UserDropdown v-if="!hideUserDropdown" />
     </header>
 </template>
 
 <script>
-import UserDowndown from './UserDropdown'
+import UserDropdown from './UserDropdown'
 
 export default {
     name: 'Header',
-    components: { UserDowndown },
+    components: { UserDropdown },
     props: {
         title: String,
         hideToggle: Boolean, // Mostra e esconde o Menu da aplicação
@@ -27,19 +27,17 @@ export default {
         }
     },
     methods: {
-        toggleMenu(){
+        toggleMenu() {
             this.$store.commit('toggleMenu')
         }
     }
-
 }
 </script>
 
 <style>
-
     .header {
         grid-area: header;
-        background: linear-gradient(to right, #1e46, #87c57f);
+        background: linear-gradient(to right, rgba(17, 120, 238, 0.822), #62daf8);
 
         display: flex;
         justify-content: center;
@@ -49,16 +47,21 @@ export default {
     .title {
         font-size: 1.2rem;
         color: #fff;
-        font-weight: 100; 
+        font-weight: 100;
         flex-grow: 1;
         text-align: center;
-
     }
+
     .title a {
-        color: #fff;
+        color: #FFF;
         text-decoration: none;
-
     }
+
+    .title a:hover {
+        color: #FFF;
+        text-decoration: none;
+    }
+
     header.header > a.toggle {
         width: 60px;
         height: 100%;
@@ -69,14 +72,10 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
 
     header.header > a.toggle:hover {
         color: #fff;
-        background-color: rgba(0,0,0,0.2);
+        background-color: rgba(0, 0, 0, 0.2);
     }
-
-
-
 </style>
