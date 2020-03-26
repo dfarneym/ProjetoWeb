@@ -1,32 +1,50 @@
+const admin = require('./admin')
+
 module.exports = app => {
+    app.post('/signup', app.api.user.save)
+    app.post('/signin', app.api.auth.signin)
+    app.post('/validateToken', app.api.auth.validateToken)
+
     app.route('/users')
-        .post(app.api.user.save)
-        .get(app.api.user.get)
+        .all(app.config.passport.authenticate())
+        .post(admin(app.api.user.save))
+        .get(admin(app.api.user.get))
 
     app.route('/users/:id')
-        .put(app.api.user.save)
-        .get(app.api.user.getById)
+        .all(app.config.passport.authenticate())
+        .put(admin(app.api.user.save))
+        .get(admin(app.api.user.getById))
+        .delete(admin(app.api.user.remove))
 
     app.route('/categories')
-        .get(app.api.category.get)
-        .post(app.api.category.save)
+        .all(app.config.passport.authenticate())
+        .get(admin(app.api.category.get))
+        .post(admin(app.api.category.save))
 
-    //Cuidado com a ordem: Tem que vir antes de /categories/:id
+    // Cuidado com ordem! Tem que vir antes de /categories/:id
     app.route('/categories/tree')
+        .all(app.config.passport.authenticate())
         .get(app.api.category.getTree)
-        
+
     app.route('/categories/:id')
-       .get(app.api.category.getById)
-       .put(app.api.category.save)
-       .delete(app.api.category.remove)  
-       
+        .all(app.config.passport.authenticate())
+        .get(app.api.category.getById)
+        .put(admin(app.api.category.save))
+        .delete(admin(app.api.category.remove))
+
     app.route('/products')
+        .all(app.config.passport.authenticate())
         .get(app.api.product.get)
         .post(app.api.product.save)
-    
+
     app.route('/products/:id')
+        .all(app.config.passport.authenticate())
         .get(app.api.product.getById)
-        .put(app.api.product.save)
-        .delete(app.api.product.remove)
-    
+        .put(admin(app.api.product.save))
+        .delete(admin(app.api.product.remove))
+        
+    app.route('/categories/:id/products')
+        .all(app.config.passport.authenticate())
+        .get(app.api.product.getByCategory)
+   
 }

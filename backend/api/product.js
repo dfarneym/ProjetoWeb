@@ -1,3 +1,5 @@
+const queries = require('./queries')
+
 module.exports = app => {
     const { existsOrError } = app.api.validation
 
@@ -65,11 +67,32 @@ module.exports = app => {
             .where({ id: req.params.id })
             .first()//toda consulta ele retorna um array com o primeiro elemento do array e usa como resultado
             .then(product => {
-                product.content = product.content.toString()//O artigo ele vem no formato binario evai ser convertido para string antes de retornar para o ususario 
+                product.content = product.content.toString()//O produto ele vem no formato binario e vai ser convertido para string antes de retornar para o usuario 
                 return res.json(product)
             })
             .catch(err => res.status(500).send(err))
     }
+    //Consulta paginada
+    //Atraves do page vou poder saber em que pag vou obter a consulta paginada
+    //Obtendo resultado a partir do knex  na categories
+    //No final vou ter um array de ids, sendo o proprio id da categoria pai 'categoryId mais os ids das categorias filha
+    const getByCategory = async (req, res) => {
+        const categoryId = req.params.id
+        const page = req.query.page || 1
+        const categories = await app.db.raw(queries.categoryWithChildren, categoryId)
+        const ids = categories.rows.map(c => c.id)
+    
+        //consultas que vai obter os ids e vai interagir com duas tabelas diferentes
+        app.db({p: 'products', u: 'users'})
+            .select('p.id', 'p.name', 'p.description', 'p.imageUrl', { author: 'u.name' })
+            .limit(limit).offset(page * limit - limit)
+            .whereRaw('?? = ??', ['u.id', 'p.userId'])
+            .whereIn('categoryId', ids)
+            .orderBy('p.id', 'desc')
+            .then(products => res.json(products))
+            .catch(err => res.status(500).send(err))
+    }
 
-    return { save, remove, get, getById }
+    return { save, remove, get, getById, getByCategory }
+       
 }

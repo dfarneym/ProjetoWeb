@@ -5,7 +5,12 @@ module.exports = app => {
     //Metodo serve para salvar uma categoria e para alterar
     //criando um clone utilizando o operador req
     const save = (req, res) => {
-        const category = { ...req.body }
+        const category = {
+            id: req.body.id,
+            name: req.body.name,
+            parentId: req.body.parentId
+        }
+
         if(req.params.id) category.id = req.params.id
 
         try {
