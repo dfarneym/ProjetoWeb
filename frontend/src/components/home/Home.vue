@@ -1,15 +1,13 @@
-<!-- Componente da página Home -->
-
 <template>
     <div class="home">
         <PageTitle icon="fa fa-home" main="Dashboard"
-            sub="Será que Presta?" />
+            sub="Será que presta" />
         <div class="stats">
-            <Stat title="Categorias" :values="stat.categories"
+            <Stat title="Categorias" :value="stat.categories"
                 icon="fa fa-folder" color="#d54d50" />
-            <Stat title="Produtos" :values="stat.products"
+            <Stat title="Produtos" :value="stat.products"
                 icon="fa fa-file" color="#3bc480" />
-            <Stat title="Usuários" :values="stat.users"
+            <Stat title="Usuários" :value="stat.users"
                 icon="fa fa-user" color="#3282cd" />
         </div>
     </div>
@@ -41,5 +39,9 @@ export default {
 </script>
 
 <style>
-
+    .stats {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 </style>
