@@ -1,7 +1,9 @@
+<!-- Componente da página Home -->
+
 <template>
     <div class="home">
         <PageTitle icon="fa fa-home" main="Dashboard"
-            sub="Será que presta" />
+            sub="Será que Presta?" />
         <div class="stats">
             <Stat title="Categorias" :value="stat.categories"
                 icon="fa fa-folder" color="#d54d50" />
