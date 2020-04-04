@@ -1,12 +1,9 @@
 // Conexão com banco de dados
+const { db } = require('./.env')
 
 module.exports = {
     client: 'postgresql',
-    connection: {
-      database: 'seraquepresta',
-      user:     'postgres',
-      password: '1234'
-    },
+    connection: db,
     pool: {
       min: 2,
       max: 10
