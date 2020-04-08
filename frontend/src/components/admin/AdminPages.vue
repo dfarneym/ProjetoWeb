@@ -30,7 +30,7 @@ import UserAdmin from './UserAdmin'
 
 export default {
     name: 'AdminPages',
-    components: { PageTitle,ProductAdmin, CategoryAdmin, UserAdmin }
+    components: { PageTitle, ProductAdmin, CategoryAdmin, UserAdmin }
 }
 </script>
 

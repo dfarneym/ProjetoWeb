@@ -9,15 +9,15 @@ Vue.use(Toasted, {
 })
 
 Vue.toasted.register(
-    'defaultSucess',
+    'defaultSuccess',
     payload => !payload.msg ? 'Operação realizada com sucesso!' : payload.msg,
-    { type: 'sucess', icon: 'check' }
+    { type: 'success', icon: 'check' }
 )
 
 Vue.toasted.register(
     'defaultError',
     payload => !payload.msg ? 'Oops.. Erro inesperado.' : payload.msg,
-    { type: 'error', icon: 'times' }
+    { type : 'error', icon : 'times' }
 )
 
 // Essas mensagens acima são as mensagens padrões para o caso de não personalizarmos as mensagens através do .msg
