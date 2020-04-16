@@ -47,6 +47,17 @@ export default {
             })
         }
     },
+    watch: {
+        $route(to) {
+            this.category.id = to.params.id
+            this.products = []
+            this.page = 1
+            this.loadMore = true
+
+            this.getCategory()
+            this.getProducts()
+        }
+    },
     mounted() {
         this.category.id = this.$route.params.id
         this.getCategory()
