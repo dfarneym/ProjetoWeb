@@ -7,6 +7,7 @@ import Home from '@/components/home/Home'
 import AdminPages from '@/components/admin/AdminPages'
 import ProductsByCategory from '@/components/product/ProductsByCategory'
 import ProductById from '@/components/product/ProductById'
+import Auth from '@/components/auth/Auth'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,10 @@ const routes = [{
     name: 'productById',
     path: '/products/:id',
     component: ProductById
+}, {
+    name: 'auth',
+    path: '/auth',
+    component: Auth
 }]
 
 // Instanciando e exportando o Vue Router
