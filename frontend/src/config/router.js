@@ -9,6 +9,8 @@ import ProductsByCategory from '@/components/product/ProductsByCategory'
 import ProductById from '@/components/product/ProductById'
 import Auth from '@/components/auth/Auth'
 
+import { userKey } from '@/global'
+
 Vue.use(VueRouter)
 
 // Registrando rotas...
@@ -17,9 +19,10 @@ const routes = [{
     path: '/',
     component: Home
 }, {
-    name:'adminPages',
+    name: 'adminPages',
     path: '/admin',
-    component: AdminPages
+    component: AdminPages,
+    meta: { requiresAdmin: true }
 }, {
     name: 'productsByCategory',
     path: '/categories/:id/products',
@@ -35,8 +38,20 @@ const routes = [{
 }]
 
 // Instanciando e exportando o Vue Router
-export default new VueRouter({
+const router = new VueRouter({
     mode: 'history',
     routes
 })
 
+router.beforeEach((to, from, next) => {
+    const json = localStorage.getItem(userKey)
+
+    if(to.matched.some(record => record.meta.requiresAdmin)) {
+        const user = JSON.parse(json)
+        user && user.admin ? next() : next({ path: '/' })
+    } else {
+        next()
+    }
+})
+
+export default router

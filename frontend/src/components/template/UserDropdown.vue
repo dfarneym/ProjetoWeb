@@ -2,7 +2,7 @@
 
 <!-- template: botão principal lá no Header (nome, img e ícone) e a área com o conteúdo do dropbox -->
 <template>
-    <div class='user-dropdown'>
+    <div class="user-dropdown">
         <div class="user-button">
             <span class="d-none d-sm-block">{{ user.name }}</span>
             <div class="user-dropdown-img">
@@ -11,7 +11,7 @@
             <i class="fa fa-angle-down"></i>
         </div>
         <div class="user-dropdown-content">
-            <router-link to="admin">
+            <router-link to="/admin" v-if="user.admin">
                 <i class="fa fa-cogs"></i> Administração
             </router-link>
             <a href @click.prevent="logout"><i class="fa fa-sign-out"></i> Sair</a>
@@ -27,7 +27,7 @@ import { mapState } from 'vuex'
 import Gravatar from 'vue-gravatar'
 
 export default {
-    name: 'UserDropDown',
+    name: 'UserDropdown',
     components: { Gravatar },
     computed: mapState(['user']),
     methods: {
@@ -43,7 +43,7 @@ export default {
 <style>
     .user-dropdown {
         position: relative;
-        height: 100%;        
+        height: 100%;
     }
 
     .user-button {

@@ -33,8 +33,9 @@
                     </b-form-group>
                 </b-col>
                 <b-col md="6" sm="12">
-                    <b-form-group label="Confirmação de Senha:" label-for="user-confirmPassword">
-                        <b-form-input id="user-confirmPassword" type="password"
+                    <b-form-group label="Confirmação de Senha:" 
+                        label-for="user-confirm-password">
+                        <b-form-input id="user-confirm-password" type="password"
                             v-model="user.confirmPassword" required
                             placeholder="Confirme a Senha do Usuário..." />
                     </b-form-group>

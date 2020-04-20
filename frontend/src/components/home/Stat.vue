@@ -28,7 +28,7 @@ export default {
     .stat {
         flex: 1;
         display: flex;
-        border-radius: 8;
+        border-radius: 8px;
         margin-right: 20px;
         margin-bottom: 20px;
         background-color: #FFF;
