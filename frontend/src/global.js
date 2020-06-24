@@ -1,9 +1,15 @@
 // Quando tiver gerando o Build pra produção, será substituído essa url para a API de produção 
 
 import Vue from 'vue'
+//export const OAPP_URL = '__seraquepresta_user'
+//export const APP_URL = 'https://seraquepresta-api.herokuapp.com/api'
+
+//export const OAPP_URL = 'https://seraquepresta-apifront.herokuapp.com/'
+//export const APP_URL = 'https://seraquepresta-api.herokuapp.com/'
 
 export const userKey = '__seraquepresta_user'
-export const baseApiUrl = 'http://localhost:3000'
+//port const OAPI_URL = 'https://seraquepresta-api.herokuapp.com/api'
+export const baseApiUrl = 'https://seraquepresta-api.herokuapp.com'
 
 export function showError(e) {
     if(e && e.response && e.response.data) {

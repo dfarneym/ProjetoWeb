@@ -28,10 +28,10 @@ export default {
     .stat {
         flex: 1;
         display: flex;
-        border-radius: 8px;
-        margin-right: 20px;
+        border-radius: 40px;
+        margin-right: 40px;
         margin-bottom: 20px;
-        background-color: #FFF;
+        background-color: rgba(59, 122, 180, 0.185);
         padding: 20px;
         border: 1px solid rgba(0, 0, 0, 0.2);
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);

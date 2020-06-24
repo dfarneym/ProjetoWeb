@@ -37,7 +37,7 @@ export default {
 <style>
     .header {
         grid-area: header;
-        background: linear-gradient(to right, rgba(17, 120, 238, 0.822), #62daf8);
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.822), #62daf8);
 
         display: flex;
         justify-content: center;
@@ -54,7 +54,12 @@ export default {
 
     .title a {
         color: #FFF;
+        font-family: 'Lucida Sans';
+        font-size: 150%;
         text-decoration: none;
+        float: left;
+        padding-left: 0.5cm;
+        font-style: italic;
     }
 
     .title a:hover {

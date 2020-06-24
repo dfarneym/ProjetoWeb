@@ -14,6 +14,7 @@ module.exports = app => {
 
         if (!user) return res.status(400).send('Usuário não encontrado!')
         //Comparando a senha para ver se deu match ou seja se o hash foi gerado apartir da mesma senha
+        //const isMatch = true
         const isMatch = bcrypt.compareSync(req.body.password, user.password)
         if (!isMatch) return res.status(401).send('Email/Senha inválidos!')
 

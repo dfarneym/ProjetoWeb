@@ -2,8 +2,7 @@
 
 <template>
     <div class="home">
-        <PageTitle icon="fa fa-home" main="Dashboard"
-            sub="Será que Presta?" />
+        <PageTitle icon="fa fa-home" main="Estatísticas" />
         <div class="stats">
             <Stat title="Categorias" :value="stat.categories"
                 icon="fa fa-folder" color="#d54d50" />

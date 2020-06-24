@@ -18,7 +18,7 @@
 
             <a href @click.prevent="showSignup = !showSignup">
                 <span v-if="showSignup">Já tem cadastro? Acesse o Login!</span>
-                <span v-else>Não tem cadastro? Registre-se aqui!</span>
+                <span v-else>Não tem uma conta? Cadastre-se!</span>
             </a>
         </div>
     </div>
@@ -68,7 +68,7 @@ export default {
     }
 
     .auth-modal {
-        background-color: #FFF;
+        background-color: rgb(0, 0, 0);
         width: 350px;
         padding: 35px;
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
@@ -80,6 +80,7 @@ export default {
 
     .auth-title {
         font-size: 1.2rem;
+        color: #FFF;
         font-weight: 100;
         margin-top: 10px;
         margin-bottom: 15px;
@@ -94,13 +95,14 @@ export default {
     }
 
     .auth-modal button {
-        align-self: flex-end;
-        background-color: #2460ae;
+        align-self: center;
+        background-color: #62daf886;
         color: #FFF;
         padding: 5px 15px;
     }
 
     .auth-modal a {
+        color: #ffffffbe;
         margin-top: 35px;
     }
 

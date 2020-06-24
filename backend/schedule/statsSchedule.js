@@ -19,7 +19,7 @@ module.exports = app => {
             products: productsCount.count,
             createdAt: new Date()
         })
-        //comparando as duas estatísticas se ele mudaram ou não, e se mudou eu pessisto mo mongodb ou não
+        //comparando as duas estatísticas se ele mudaram ou não, e se mudou eu pessisto no mongodb ou não
         //Se a ultima estatística não estiver setada ou o valor for diferente considera-se que:
         // o usuário ou  a categoria ou o produto mudaram
         const changeUsers = !lastStat || stat.users !== lastStat.users
@@ -29,7 +29,7 @@ module.exports = app => {
         //Se mudou alguma das estatística mudou, já habilita para 
         //ser inserido o novo registro no mongodb
         if(changeUsers || changeCategories || changeProducts){
-            stat.save().then(() => console.log('[Stats] Estatísticas atualizadas'))
+            stat.save().then(() => console.log('[Stats] Estatísticas atualizadas!'))
 
         }
 
