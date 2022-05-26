@@ -1,10 +1,10 @@
 # Web Site Será que Presta?
 
-- Link do site: https://seraquepresta.herokuapp.com/auth
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/dfarneym/ProjetoWeb/blob/master/LICENCE)
 
 ![Topo do site será que presta](https://user-images.githubusercontent.com/53848638/170397246-45197307-4a02-4a90-a926-cbfb0f606462.PNG)
 
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/dfarneym/ProjetoWeb/blob/master/LICENCE)
+- Link do site: https://seraquepresta.herokuapp.com/auth
 
 ## Telas e navegação do Web Site:
 
