@@ -50,6 +50,7 @@ Em versões futuras serão adicionadas novas funcionalidades ao software, como o
 - Pixabay: https://pixabay.com/pt
 - Knex: http://knexjs.org/
 
-
-
+## Autor:
+- Daniel Farney
+- http://www.linkedin.com/in/d-farney
 
