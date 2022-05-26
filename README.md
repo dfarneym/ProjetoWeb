@@ -49,6 +49,7 @@ Em versões futuras serão adicionadas novas funcionalidades ao software, como o
 - Documentação Heroku: https://devcenter.heroku.com
 - Pixabay: https://pixabay.com/pt
 - Knex: http://knexjs.org/
+- Plataforma de treinamento: https://www.cod3r.com.br
 
 ## Autor:
 - Daniel Farney
