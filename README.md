@@ -32,7 +32,7 @@
 
 ## Tecnologias e liguagens utilizadas:
 
-- JajaScript
+- JavaScript
 - Vue.js
 - Node.js
 - PostgresSQL
