@@ -4,7 +4,7 @@
 
 ![Topo do site será que presta](https://user-images.githubusercontent.com/53848638/170397246-45197307-4a02-4a90-a926-cbfb0f606462.PNG)
 
-- Link do site: https://seraquepresta.herokuapp.com/auth
+- Link do site: https://seraquepresta.herokuapp.com
 
 ## Telas e navegação do Web Site:
 
